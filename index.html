@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHOENIX GRAY | Official Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* CSS ARCHITECTURE
+           Theme: Matte Black & Luxury Gold
+           Style: Modern Glassmorphism
+        */
+
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: rgba(20, 20, 20, 0.6);
+            --gold: #d4af37;
+            --gold-light: #f7d560;
+            --text-main: #ffffff;
+            --text-sub: #b3b3b3;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --blue-verified: #1da1f2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Particles */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: float 10s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        /* Main Container */
+        .profile-container {
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1.2s ease-out;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        /* Luxury Golden Border Animation */
+        .profile-container::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, var(--gold), transparent, var(--gold));
+            z-index: -1;
+            border-radius: 32px;
+            animation: rotateBorder 5s linear infinite;
+        }
+
+        @keyframes rotateBorder {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        /* Profile Image */
+        .img-wrapper {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Verified Badge */
+        .name-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shine 3s infinite linear;
+        }
+
+        .verified {
+            color: var(--blue-verified);
+            font-size: 1.2rem;
+        }
+
+        @keyframes shine {
+            0% { background-position: 0; }
+            100% { background-position: 200%; }
+        }
+
+        .bio {
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .link-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--gold);
+            color: var(--text-main);
+            text-decoration: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .link-btn:hover {
+            background: var(--gold);
+            color: #000;
+            box-shadow: 0 0 20px var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            color: var(--text-sub);
+            font-size: 0.8rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .profile-container { width: 95%; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="profile-container">
+        <div class="img-wrapper">
+            <img src="01304564096.png" alt="PHOENIX GRAY" class="profile-img">
+        </div>
+
+        <div class="name-wrapper">
+            <h1 class="name">PHOENIX GRAY</h1>
+            <i class="fas fa-check-circle verified" title="Verified"></i>
+        </div>
+
+        <div class="bio">
+            <p>﷽</p>
+            <p>Assalamu Alaikum</p>
+            <p>Welcome To My Official Profile</p>
+        </div>
+
+        <nav>
+            <a href="https://www.facebook.com/share/17dk3VNyaz/" class="link-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://tiktok.com/@phoenix.gray2.0" class="link-btn"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://wa.me/8801843373682" class="link-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="tel:+8801843373682" class="link-btn"><i class="fas fa-phone"></i> Call Me</a>
+            <a href="mailto:mrhacker04564096@gmail.com" class="link-btn"><i class="fas fa-envelope"></i> Email</a>
+        </nav>
+
+        <footer>
+            <p>&copy; 2026 PHOENIX GRAY. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Particle Generator
+        const container = document.getElementById('particles-js');
+        for (let i = 0; i < 20; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            p.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(p);
+        }
+
+        // Smooth scroll and interaction logging
+        document.querySelectorAll('.link-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                console.log('Navigating to ' + btn.innerText);
+            });
+        });
+    </script>
+</body>
+</html>
